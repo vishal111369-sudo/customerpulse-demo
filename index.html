@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CustomerPulse — Customer Intelligence for Any Industry</title>
+<meta name="description" content="One customer-intelligence core, tuned to your world. Capture any back-office or CRM, map it to a canonical profile, and get an AI brief with the next best action — for B2B SaaS, Retail, Finance and more.">
+<!-- CustomerPulse marketing / demo landing. (c) 2026 Equibyte Technologies. -->
+<style>
+  :root{--bg:#0b0e16;--bg2:#0f1320;--surface:#161b27;--surface2:#1c2235;--border:#232b40;--border2:#2e3854;
+    --text:#e6eefc;--text2:#9fb2d4;--muted:#5b6f8f;--accent:#4f8dff;--accent2:#7c6bff;--green:#00c076;--red:#e8304a;
+    --gold:#ffd740;--cyan:#00e5ff;--purple:#b47fff;--mono:'SF Mono','Fira Code','Courier New',monospace;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .nav{position:sticky;top:0;z-index:30;background:rgba(11,14,22,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav .row{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.2px}
+  .brand .dot{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-size:15px}
+  .navlinks{display:flex;gap:26px;font-size:14px;color:var(--text2)}
+  .navlinks a:hover{color:var(--text)}
+  .btn{display:inline-block;border-radius:9px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid var(--border2);color:var(--text);background:var(--surface2);transition:.15s}
+  .btn:hover{border-color:var(--accent)}
+  .btn.p{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff}
+  .btn.lg{padding:13px 24px;font-size:15px}
+  @media(max-width:760px){.navlinks{display:none}}
+
+  .hero{padding:84px 0 60px;position:relative}
+  .hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text2);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:5px 12px;margin-bottom:20px}
+  .pill .g{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+  h1{font-size:48px;line-height:1.08;font-weight:850;letter-spacing:-1px}
+  h1 .grad{background:linear-gradient(120deg,var(--accent),var(--purple),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.sub{color:var(--text2);font-size:17px;margin:20px 0 28px;max-width:520px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .tiny{color:var(--muted);font-size:12.5px;margin-top:16px}
+  @media(max-width:900px){.hero .grid{grid-template-columns:1fr}h1{font-size:38px}}
+
+  /* mock */
+  .mock{background:linear-gradient(180deg,var(--bg2),var(--surface));border:1px solid var(--border2);border-radius:16px;padding:16px;box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+  .mock .bar{display:flex;align-items:center;gap:7px;padding:2px 4px 12px;color:var(--muted);font-family:var(--mono);font-size:11.5px}
+  .mock .bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .mock .hd{display:flex;align-items:center;justify-content:space-between;padding:0 4px 12px}
+  .mock .hd .nm{font-weight:700} .mock .hd .rk{font-size:11px;font-weight:700;color:var(--red);background:rgba(232,48,74,.14);padding:2px 9px;border-radius:20px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+  .kpi{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px}
+  .kpi .l{font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--text2)}
+  .kpi .v{font-size:15px;font-weight:800;font-family:var(--mono);margin-top:2px}
+  .charts{display:grid;grid-template-columns:1.6fr 1fr;gap:8px}
+  .cbox{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:9px}
+  .cbox .ct{font-size:9.5px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px}
+  .spark{display:flex;align-items:flex-end;gap:3px;height:52px}
+  .spark i{flex:1;border-radius:2px 2px 0 0;display:block}
+
+  section{padding:64px 0;border-top:1px solid var(--border)}
+  .eyebrow{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
+  h2{font-size:32px;font-weight:800;text-align:center;margin:10px 0 8px;letter-spacing:-.5px}
+  .lead{color:var(--text2);text-align:center;max-width:640px;margin:0 auto 40px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+  .card .n{font-family:var(--mono);color:var(--accent);font-size:13px;font-weight:700}
+  .card h3{font-size:18px;margin:8px 0 8px}
+  .card p{color:var(--text2);font-size:14.5px}
+  .verts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .vert .ic{font-size:26px} .vert h3{font-size:17px;margin:10px 0 4px}
+  .vert .role{color:var(--muted);font-size:12.5px;margin-bottom:12px}
+  .maprow{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-top:1px dashed var(--border)}
+  .maprow .k{color:var(--text2)} .maprow .v{font-family:var(--mono);color:var(--text)}
+  @media(max-width:820px){.steps,.verts{grid-template-columns:1fr}}
+  .band{background:linear-gradient(120deg,rgba(79,141,255,.12),rgba(124,107,255,.12));border:1px solid var(--border2);border-radius:18px;padding:40px;text-align:center;margin:24px 0}
+  .band h2{margin-bottom:10px}
+  code{font-family:var(--mono);background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:1px 6px;font-size:13px;color:var(--cyan)}
+  footer{padding:40px 0;border-top:1px solid var(--border);color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap row">
+  <div class="brand"><span class="dot">◉</span> CustomerPulse</div>
+  <div class="navlinks">
+    <a href="#how">How it works</a><a href="#verticals">Verticals</a><a href="#ingest">Ingestion</a>
+  </div>
+  <a class="btn p" href="https://customerpulse.equibytetechnologies.com" target="_blank">Open the app →</a>
+</div></nav>
+
+<header class="hero"><div class="wrap grid">
+  <div>
+    <div class="pill"><span class="g"></span> Live · one core, every industry</div>
+    <h1>Customer intelligence,<br><span class="grad">tuned to your world.</span></h1>
+    <p class="sub">CustomerPulse captures any back-office or CRM, maps it into one canonical customer profile, and hands your team an AI brief with the next best action — relabelled automatically for B2B SaaS, Retail, Finance and beyond.</p>
+    <div class="cta">
+      <a class="btn p lg" href="https://customerpulse.equibytetechnologies.com" target="_blank">Open the live app</a>
+      <a class="btn lg" href="https://customerpulse.equibytetechnologies.com" target="_blank">Explore a Sandbox</a>
+    </div>
+    <div class="tiny">No setup — tick <b>Use Sandbox</b> at sign-in to explore any domain with seeded sample data.</div>
+  </div>
+  <div class="mock">
+    <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i> customerpulse · finance · client 360</div>
+    <div class="hd"><div class="nm">Cedar Point Fund <span style="color:var(--muted);font-family:var(--mono);font-size:11px">CL-8803</span></div><div class="rk">⚠ Attrition risk</div></div>
+    <div class="kpis">
+      <div class="kpi"><div class="l">AUM</div><div class="v">$1.2M</div></div>
+      <div class="kpi"><div class="l">Commission</div><div class="v">$8.4k</div></div>
+      <div class="kpi"><div class="l">Engagement</div><div class="v">36</div></div>
+      <div class="kpi"><div class="l">Trades 30d</div><div class="v">6</div></div>
+    </div>
+    <div class="charts">
+      <div class="cbox"><div class="ct">Commission trajectory</div><div class="spark" id="s1"></div></div>
+      <div class="cbox"><div class="ct">Trading volume</div><div class="spark" id="s2"></div></div>
+    </div>
+  </div>
+</div></header>
+
+<section id="how"><div class="wrap">
+  <div class="eyebrow">How it works</div>
+  <h2>From raw back-office to decision — in seconds</h2>
+  <p class="lead">A browser plugin or a simple HTTP API does the capturing. CustomerPulse does the thinking.</p>
+  <div class="steps">
+    <div class="card"><div class="n">01</div><h3>Capture anything</h3><p>A point-and-click browser plugin scrapes any CRM or back-office page, or platforms push events straight to the ingestion API. Both map into the same canonical schema.</p></div>
+    <div class="card"><div class="n">02</div><h3>One canonical profile</h3><p>Entity, value, activity, risk and tags — a single fixed shape. Your vertical config relabels it: ARR, GGR, AUM or LTV, all from the same core.</p></div>
+    <div class="card"><div class="n">03</div><h3>AI brief + next action</h3><p>A vertical-tuned AI reads the pattern between the numbers, names the archetype, flags risk, and recommends one concrete next step for your team.</p></div>
+  </div>
+</div></section>
+
+<section id="verticals"><div class="wrap">
+  <div class="eyebrow">Verticals</div>
+  <h2>Same engine. Your language.</h2>
+  <p class="lead">Pick a domain at sign-in and every label, KPI, chart and the AI brain adapt. Here's how the one canonical field maps across three worlds.</p>
+  <div class="verts">
+    <div class="card vert"><div class="ic">☁</div><h3>B2B SaaS</h3><div class="role">Customer Success · CSM</div>
+      <div class="maprow"><span class="k">recurring value</span><span class="v">ARR</span></div>
+      <div class="maprow"><span class="k">primary spend</span><span class="v">Lifetime Value</span></div>
+      <div class="maprow"><span class="k">risk level</span><span class="v">Churn Risk</span></div>
+      <div class="maprow"><span class="k">units used</span><span class="v">Active Seats</span></div></div>
+    <div class="card vert"><div class="ic">🛍</div><h3>Retail / E-com</h3><div class="role">Shopper CRM · Account Mgr</div>
+      <div class="maprow"><span class="k">recurring value</span><span class="v">Avg Monthly Spend</span></div>
+      <div class="maprow"><span class="k">primary spend</span><span class="v">Lifetime Spend</span></div>
+      <div class="maprow"><span class="k">risk level</span><span class="v">Churn Risk</span></div>
+      <div class="maprow"><span class="k">units used</span><span class="v">Orders (90d)</span></div></div>
+    <div class="card vert"><div class="ic">📈</div><h3>Finance / Trading</h3><div class="role">Brokerage CRM · RM</div>
+      <div class="maprow"><span class="k">recurring value</span><span class="v">Avg Monthly Volume</span></div>
+      <div class="maprow"><span class="k">primary spend</span><span class="v">Assets Under Mgmt</span></div>
+      <div class="maprow"><span class="k">risk level</span><span class="v">Attrition Risk</span></div>
+      <div class="maprow"><span class="k">units used</span><span class="v">Open Positions</span></div></div>
+  </div>
+</div></section>
+
+<section id="ingest"><div class="wrap">
+  <div class="eyebrow">Ingestion</div>
+  <h2>Two ways in. One profile.</h2>
+  <p class="lead">However your data arrives, it lands in the same canonical store — org-isolated and locked down.</p>
+  <div class="steps" style="grid-template-columns:1fr 1fr">
+    <div class="card"><h3>🧩 Browser plugin</h3><p>Works on any CRM/back-office. Point-and-click mapping learns your page's labels once, then captures the full profile in a click and opens it in CustomerPulse.</p></div>
+    <div class="card"><h3>🔌 HTTP ingestion API</h3><p>Platforms push <code>identity</code>, <code>session</code> and <code>transaction</code> events with a per-org API key. Kept light — only logins and payments. Row-level-security isolates every org.</p></div>
+  </div>
+  <div class="band">
+    <div class="eyebrow">Ready when you are</div>
+    <h2>See it on your world</h2>
+    <p class="lead" style="margin-bottom:22px">Open the app, pick your domain, and explore a live Sandbox with seeded data — no account data required.</p>
+    <a class="btn p lg" href="https://customerpulse.equibytetechnologies.com" target="_blank">Open CustomerPulse →</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  CustomerPulse · a customer-intelligence platform by Equibyte Technologies · demo &amp; sample data only<br>
+  <span style="color:var(--muted)">© 2026 Equibyte Technologies</span>
+</div></footer>
+
+<script>
+  // sparkline mocks
+  function spark(id,vals,color){ const el=document.getElementById(id); const mx=Math.max(...vals);
+    el.innerHTML=vals.map(v=>`<i style="height:${Math.max(8,v/mx*52)}px;background:${color}"></i>`).join(""); }
+  spark("s1",[46,44,40,38,41,42,39,40,37,34,31,29,26,22],"#00c076");
+  spark("s2",[30,52,18,44,24,50,60,20,55,26,48,58,22,40],"#4f8dff");
+</script>
+</body>
+</html>
